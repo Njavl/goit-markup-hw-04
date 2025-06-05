@@ -131,15 +131,11 @@ img {
 
 /*========== current page ==========*/
 
-.header-nav-item.current {
-  position: relative;
-}
-
-.header-nav-item.current .header-nav-link {
+.header-nav-link.current {
   color: var(--ocean);
 }
 
-.header-nav-item.current::after {
+.header-nav-link.current::after {
   content: "";
   display: block;
   background-color: var(--ocean);
