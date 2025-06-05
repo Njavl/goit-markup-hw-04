@@ -126,6 +126,7 @@ img {
   display: block;
   padding: 24px 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 /*========== current page ==========*/
@@ -138,7 +139,7 @@ img {
   color: var(--ocean);
 }
 
-.header-nav-item.current:after {
+.header-nav-item.current::after {
   content: "";
   display: block;
   background-color: var(--ocean);
@@ -212,6 +213,7 @@ img {
     url(../images/people-office\ 1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
   padding: 188px 0;
   max-width: 1440;
 }
@@ -362,15 +364,23 @@ img {
 }
 
 .social {
+}
+
+.social-list {
   display: flex;
   gap: 24px;
   justify-content: center;
 }
 
-.social-link {
-  display: block;
+.social-item {
   width: 40px;
   height: 40px;
+}
+
+.social-link {
+  display: block;
+  width: 100%;
+  height: 100%;
   background-color: var(--iris);
   border-radius: 50%;
   display: flex;
@@ -379,7 +389,7 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-item:hover .social-link {
+.social-link:hover {
   background-color: var(--ocean);
 }
 
@@ -444,9 +454,10 @@ img {
 .portfolio-item:hover {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-  .portfolio-item-hover-desc {
-    transform: translateY(0%);
-  }
+}
+
+.portfolio-item:hover .portfolio-item-hover-desc {
+  transform: translateY(0%);
 }
 
 .portfolio-about-item {
@@ -481,7 +492,11 @@ img {
 
 .footer .container {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
+}
+
+.footer-slogan {
+  margin-right: 120px;
 }
 
 .footer-logo {
